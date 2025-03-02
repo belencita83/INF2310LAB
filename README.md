@@ -320,7 +320,7 @@ ls -la /home/bandit23-git/repo  # Listar el contenido del repositorio
 git log                         # Ver historial de commits
 git show <commit_id>            # Ver cambios en un commit específico
 ```
-**Solución:** La contraseña se encuentra en un commit anterior dentro del historial del repositorio Git. La contraseña para el nivel 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ.
+**Solución:** La contraseña se encuentra en un commit anterior dentro del historial del repositorio Git. La contraseña para el nivel 24: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8.
 
 ### Nivel 24
 
@@ -333,6 +333,21 @@ echo {0000..9999} | xargs -n1 -P10 -I{} sh -c 'echo "UoMYTrfrBFHyQXmg6gzctqAwOmw
 # Ataque de fuerza bruta para encontrar el PIN
 ```
 **Solución:** Después de probar todos los PINs posibles, encontramos el correcto. La contraseña para el nivel 25: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4.
+
+### Nivel 25
+
+**Descripción:** El nivel nos da un script en /usr/bin/showtext, que debemos analizar para encontrar la forma de obtener la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls -la /usr/bin/showtext                    # Ver detalles del script
+echo "$(cat /etc/bandit_pass/bandit26)"     # Intentar leer la contraseña
+echo "$(more /etc/bandit_pass/bandit26)"    # Usar el comando "more" dentro del script
+```
+**Solución:** Aprovechamos que more puede abrir un shell interactivo (!sh) para obtener la contraseña para el nivel 26: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ.
+
+
+
 
 
 
