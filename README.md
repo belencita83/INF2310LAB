@@ -203,3 +203,16 @@ nc localhost 30000              # Conectar al puerto 30000 y enviar la contrase�
 **Solución:** Obtenemos la contraseña de bandit14 usando: cat /etc/bandit_pass/bandit14. La contraseña obtenida es: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS. Nos conectamos al servicio en el puerto 30000 con nc: nc localhost 30000. Luego, ingresamos la contraseña anterior y presionamos Enter.
               Obtenemos la contraseña para el nivel 15: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo.
 
+### Nivel 15
+
+**Descripción:** En este nivel, encontramos un servidor en el puerto 30001 que requiere autenticación mediante un binario SSL. Debemos usar openssl para conectarnos y enviar la contraseña del nivel actual para obtener la del siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+openssl s_client    # Se usa para establecer una conexión segura con un servidor SSL/TLS.
+echo                #  Imprime un mensaje en la terminal.
+nc (netcat)         # Para probar la conexión antes de usar openssl (opcional).
+```
+**Solución:** Conectarse al servidor en el puerto 30001 usando openssl: openssl s_client -connect localhost:30001 -quiet
+Una vez dentro, enviar la contraseña del nivel 15. Recibiremos la contraseña para el nivel 16: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx.
+
