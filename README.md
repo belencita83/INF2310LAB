@@ -39,7 +39,20 @@ cat ./-        # Leer el archivo oculto '-'
 
 **Comandos utilizados:**
 ```bash
-ls             # Listar los archivos en el directorio
+ls                                # Listar los archivos en el directorio
 cat spaces\ in\ this\ filename    # Leer el archivo con espacios en el nombre
 ```
 **Solución:** La contraseña para el nivel 3 es: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx.
+
+### Nivel 3
+
+**Descripción:** En este nivel, debes acceder a un directorio llamado inhere y leer el archivo ...Hiding-From-You para obtener la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls                        # Listar los archivos en el directorio
+cd inhere/                # Acceder al directorio 'inhere'
+ls -la                    # Listar los archivos detallados en 'inhere'
+cat ...Hiding-From-You    # Leer el archivo con el nombre oculto
+```
+**Solución:** La contraseña para el nivel 4 es: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ.
