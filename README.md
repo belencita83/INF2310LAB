@@ -267,4 +267,18 @@ ls -la                                                      # Comprobamos los pe
 ```
 **Solución:** Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20, que devuelve la contraseña para el nivel 20: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO.
 
+### Nivel 20
+
+**Descripción:** En este nivel, encontramos un binario llamado suconnect, el cual, al ejecutarlo con un número de puerto, se conecta a ese puerto en localhost y, si recibe la contraseña correcta, envía la contraseña del siguiente nivel.
+Para resolverlo: Iniciar un servidor en un puerto específico para escuchar la conexión de suconnect. Enviar la contraseña actual a suconnect para recibir la nueva.
+
+**Comandos utilizados:**
+```bash
+ls # Listar archivos en el directorio.
+./suconnect # Comprobar cómo funciona el binario.
+nc -lvp 2222 # Abrir un puerto con nc para escuchar conexiones.
+./suconnect 2222 # Ejecutar suconnect para que se conecte al puerto 2222.
+```
+**Solución:** Suconnect se conectó a nuestro servidor en el puerto 2222, recibió la contraseña actual (0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO) y, al ser correcta, nos envió la del nivel 21: EeoULMCra2q0dSkYj561DX7s1CpBuOBt.
+
 
