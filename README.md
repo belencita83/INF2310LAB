@@ -226,8 +226,18 @@ nmap -p 31000-32000 localhost                               # Escanear puertos a
 openssl s_client -connect localhost:PUERTO -quiet           # Conectar con OpenSSL a los puertos abiertos manualmente
 nano rsafile                                                # Guardar la clave privada en un archivo
 chmod 600 rsafile                                           # Asignar permisos seguros al archivo
-ssh -i rsafile bandit17@bandit.labs.overthewire.org -p 2220 # Conectarse al siguiente nivel con la clave privada
-whoami                                                      # Verificar el usuario actual
 ```
 **Solución:** Usar ssh -i rsafile bandit17@... para acceder al nivel 17. Ahora tenemos acceso al siguiente nivel.
 
+### Nivel 17
+
+**Descripción:** En este nivel, la contraseña para el siguiente nivel está almacenada en el archivo /etc/bandit_pass/bandit17. Sin embargo, el usuario bandit17 solo tiene permisos para leer este archivo cuando inicia sesión a través de un programa especial que se ejecuta en port 30001 en localhost.
+
+**Comandos utilizados:**
+```bash
+whoami                                           # Verificar el usuario actual
+ssh bandit17@bandit.labs.overthewire.org -p 2220 # Conectar al servidor con SSH
+cat /etc/bandit_pass/bandit17                    # Intentar leer la contraseña del siguiente nivel
+diff passwords.old passwords.new                 # Comparar los archivos
+```
+**Solución:** Comparando passwords.old y passwords.new, obtenemos el valor actualizado, la contraseña: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO.
