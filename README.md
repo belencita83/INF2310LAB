@@ -434,5 +434,26 @@ git push origin master                      # Enviar los cambios al repositorio 
 ```
 **Solución:** La contraseña para el nivel 32 es: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K.
 
+### Nivel 32
+
+**Descripción:** En este nivel, al iniciar sesión se nos presenta una shell restringida llamada "UPPERCASE SHELL", la cual bloquea comandos escritos en minúsculas. El desafío consiste en encontrar una forma de ejecutar un shell normal para acceder a la contraseña del siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+# Intentos fallidos de ejecutar una shell
+'sh'
+\sh
+echo sh | sh
+$(echo sh)
+
+# Comando exitoso para escapar de la UPPERCASE SHELL
+echo $0  # Muestra el nombre del shell en uso
+echo $0  # Devuelve '/bin/sh'
+exec sh  # Ejecuta un shell normal
+
+cat /etc/bandit_pass/bandit33 # Una vez en una shell normal, se obtiene la contraseña
+```
+**Solución:** La contraseña para el nivel 33 es: tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0.
+
 
 
