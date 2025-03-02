@@ -322,6 +322,17 @@ git show <commit_id>            # Ver cambios en un commit específico
 ```
 **Solución:** La contraseña se encuentra en un commit anterior dentro del historial del repositorio Git. La contraseña para el nivel 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ.
 
+### Nivel 24
+
+**Descripción:** En este nivel, hay un programa que solo acepta la contraseña del nivel 23 y un PIN de 4 dígitos. Debemos encontrar el PIN correcto.
+
+**Comandos utilizados:**
+```bash
+echo UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 1234 | nc localhost 30002  # Probar conexión con un PIN
+echo {0000..9999} | xargs -n1 -P10 -I{} sh -c 'echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ {}" | nc localhost 30002'
+# Ataque de fuerza bruta para encontrar el PIN
+```
+**Solución:** Después de probar todos los PINs posibles, encontramos el correcto. La contraseña para el nivel 25: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4.
 
 
 
