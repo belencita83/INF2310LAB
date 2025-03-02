@@ -209,9 +209,9 @@ nc localhost 30000              # Conectar al puerto 30000 y enviar la contrase�
 
 **Comandos utilizados:**
 ```bash
-openssl s_client    # Se usa para establecer una conexión segura con un servidor SSL/TLS.
-echo                #  Imprime un mensaje en la terminal.
-nc (netcat)         # Para probar la conexión antes de usar openssl (opcional).
+openssl s_client    # Se usa para establecer una conexión segura con un servidor SSL/TLS
+echo                #  Imprime un mensaje en la terminal
+nc (netcat)         # Para probar la conexión antes de usar openssl (opcional)
 ```
 **Solución:** Conectarse al servidor en el puerto 30001 usando openssl: openssl s_client -connect localhost:30001 -quiet
 Una vez dentro, enviar la contraseña del nivel 15. Recibiremos la contraseña para el nivel 16: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx.
@@ -248,10 +248,10 @@ diff passwords.old passwords.new                 # Comparar los archivos
 
 **Comandos utilizados:**
 ```bash
-ssh bandit18@bandit.labs.overthewire.org -p 2220            # Conectarnos al servidor con la contraseña obtenida del nivel anterior.
-ssh bandit18@bandit.labs.overthewire.org -p 2220 ls         # Intentamos listar archivos antes de que la sesión se cierre.
-ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme # Leemos el contenido del archivo readme antes de la desconexión forzada.
-ls -la                                                      # Comprobamos los permisos de los archivos.
+ssh bandit18@bandit.labs.overthewire.org -p 2220            # Conectarnos al servidor con la contraseña obtenida del nivel anterior
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls         # Intentamos listar archivos antes de que la sesión se cierre
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme # Leemos el contenido del archivo readme antes de la desconexión forzada
+ls -la                                                      # Comprobamos los permisos de los archivos
 ```
 **Solución:** Dado que la sesión se cierra inmediatamente, ejecutamos el comando cat readme directamente en la conexión SSH. Esto nos devuelve la contraseña para el nivel 19: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8.
 
@@ -261,9 +261,9 @@ ls -la                                                      # Comprobamos los pe
 
 **Comandos utilizados:**
 ```bash
-./bandit20-do                               # Ejecutamos el archivo bandit20-do sin argumentos para ver su uso.
-./bandit20-do id                            # Verificamos el usuario con el que se ejecuta.
-./bandit20-do cat /etc/bandit_pass/bandit20 # Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20.
+./bandit20-do                               # Ejecutamos el archivo bandit20-do sin argumentos para ver su uso
+./bandit20-do id                            # Verificamos el usuario con el que se ejecuta
+./bandit20-do cat /etc/bandit_pass/bandit20 # Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20
 ```
 **Solución:** Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20, que devuelve la contraseña para el nivel 20: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO.
 
@@ -274,11 +274,25 @@ Para resolverlo: Iniciar un servidor en un puerto específico para escuchar la c
 
 **Comandos utilizados:**
 ```bash
-ls # Listar archivos en el directorio.
-./suconnect # Comprobar cómo funciona el binario.
-nc -lvp 2222 # Abrir un puerto con nc para escuchar conexiones.
-./suconnect 2222 # Ejecutar suconnect para que se conecte al puerto 2222.
+ls               # Listar archivos en el directorio
+./suconnect      # Comprobar cómo funciona el binario
+nc -lvp 2222     # Abrir un puerto con nc para escuchar conexiones
+./suconnect 2222 # Ejecutar suconnect para que se conecte al puerto 2222
 ```
 **Solución:** Suconnect se conectó a nuestro servidor en el puerto 2222, recibió la contraseña actual (0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO) y, al ser correcta, nos envió la del nivel 21: EeoULMCra2q0dSkYj561DX7s1CpBuOBt.
+
+### Nivel 21
+
+**Descripción:** En este nivel, encontramos un archivo cron en /etc/cron.d/cronjob_bandit22 que ejecuta un script (/usr/bin/cronjob_bandit22.sh) cada minuto como el usuario bandit22. Este script copia la contraseña del usuario bandit22 a un archivo temporal en /tmp/. El objetivo es leer ese archivo temporal para obtener la contraseña del siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+cd /etc/cron.d                            # Explorar las tareas cron en /etc/cron.d/.
+ls -la                                    # Listar los archivos detallados en 'inhere'
+cat cronjob_bandit22                      # Ver el contenido del cronjob de bandit22.
+cat /usr/bin/cronjob_bandit22.sh          # Leer el contenido del script.
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv # Leer el archivo temporal donde se guarda la contraseña.
+```
+**Solución:** Leer el archivo /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv y obtener la contraseña para el nivel 22: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q.
 
 
