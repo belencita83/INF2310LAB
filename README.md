@@ -310,4 +310,18 @@ cat /tmp/8ca319486bfbbc3663ea0fbe81326349           # Leer el archivo con la con
 ```
 **Solución:** Al leer el archivo con la contraseña: cat /tmp/8ca319486bfbbc3663ea0fbe81326349. Obtenemos la contraseña para el nivel 23: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga.
 
+### Nivel 23
+
+**Descripción:** Se nos indica que la contraseña para el siguiente nivel está almacenada en un repositorio de git en /home/bandit23-git/repo. Debemos inspeccionar el historial de commits para encontrarla.
+
+**Comandos utilizados:**
+```bash
+ls -la /home/bandit23-git/repo  # Listar el contenido del repositorio
+git log                         # Ver historial de commits
+git show <commit_id>            # Ver cambios en un commit específico
+```
+**Solución:** La contraseña se encuentra en un commit anterior dentro del historial del repositorio Git. La contraseña para el nivel 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ.
+
+
+
 
