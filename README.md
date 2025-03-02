@@ -121,3 +121,16 @@ uniq -c                     # Contar cuántas veces aparece cada línea
 grep -v 10                  # Filtrar las líneas que no aparecen 10 veces (muestra la única repetida 1 vez)
 ```
 **Solución:** La contraseña para el nivel 9 es: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM.
+
+### Nivel 9
+
+**Descripción:** En este nivel, el archivo data.txt es un archivo binario que contiene datos no legibles directamente. La tarea es encontrar la contraseña oculta dentro de él.
+
+**Comandos utilizados:**
+```bash
+ls                          # Listar los archivos en el directorio
+file data.txt               # Identificar el tipo de archivo
+strings data.txt            # Extraer cadenas de texto legibles desde el archivo binario
+grep =                      # Filtrar las líneas que contienen el carácter '='
+```
+**Solución:** Dentro del contenido extraído, se observó que la contraseña estaba en la línea con el formato "password is ...". La contraseña para el nivel 10 es: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey.
