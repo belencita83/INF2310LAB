@@ -455,5 +455,25 @@ cat /etc/bandit_pass/bandit33 # Una vez en una shell normal, se obtiene la contr
 ```
 **Solución:** La contraseña para el nivel 33 es: tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0.
 
+### Nivel 33
+
+**Descripción:** Este es el último nivel disponible actualmente en el juego Bandit de OverTheWire. Al acceder al sistema con las credenciales obtenidas en el nivel anterior, se encuentra un archivo README.txt que indica que no hay más niveles disponibles por el momento.
+
+**Comandos utilizados:**
+```bash
+ssh bandit33@bandit.labs.overthewire.org -p 2220    # Conectarse al servidor mediante SSH
+ls                                                  # Listar los archivos en el directorio principal
+cat README.txt                                      # Leer el archivo README.txt para obtener información sobre los siguientes pasos
+```
+**Contenido del archivo :**
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+
 
 
