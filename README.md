@@ -241,3 +241,18 @@ cat /etc/bandit_pass/bandit17                    # Intentar leer la contraseña 
 diff passwords.old passwords.new                 # Comparar los archivos
 ```
 **Solución:** Comparando passwords.old y passwords.new, obtenemos el valor actualizado, la contraseña: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO.
+
+### Nivel 18
+
+**Descripción:** Al conectarnos con bandit18, la sesión se cierra inmediatamente después del inicio de sesión. Esto significa que no podemos interactuar con el sistema de manera normal y debemos encontrar una forma alternativa de leer archivos.
+
+**Comandos utilizados:**
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220            # Conectarnos al servidor con la contraseña obtenida del nivel anterior.
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls         # Intentamos listar archivos antes de que la sesión se cierre.
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme # Leemos el contenido del archivo readme antes de la desconexión forzada.
+ls -la                                                      # Comprobamos los permisos de los archivos.
+```
+**Solución:** Dado que la sesión se cierra inmediatamente, ejecutamos el comando cat readme directamente en la conexión SSH. Esto nos devuelve la contraseña para el nivel 19: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8.
+
+
