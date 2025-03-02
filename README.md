@@ -346,6 +346,16 @@ echo "$(more /etc/bandit_pass/bandit26)"    # Usar el comando "more" dentro del 
 ```
 **Solución:** Aprovechamos que more puede abrir un shell interactivo (!sh) para obtener la contraseña para el nivel 26: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ.
 
+### Nivel 26
+
+**Descripción:** Nos encontramos en un entorno restringido donde la única opción es explotar la ejecución de comandos.
+
+**Comandos utilizados:**
+```bash
+./bandit27-do cat /etc/bandit_pass/bandit27  # Ejecutar el binario con permisos elevados
+```
+**Solución:** Ejecutamos ./bandit27-do con el comando cat para leer la contraseña, para el nivel 27 es: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB.
+
 
 
 
