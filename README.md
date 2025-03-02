@@ -398,4 +398,18 @@ git show <tag_name>     # Ver el contenido de una etiqueta
 ```
 **Solución:** Ejecutamos git tag y encontramos una etiqueta sospechosa. Al inspeccionarla con git show <tag_name>, obtenemos la contraseña para el nivel 30: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL.
 
+### Nivel 30
+
+**Descripción:** En este nivel, se nos proporciona un repositorio Git en ~/repo. Debemos examinar los archivos de configuración remotos para obtener la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls -la                       # Listar archivos ocultos
+cd repo                      # Acceder al directorio del repositorio
+git remote -v                # Ver los repositorios remotos configurados
+git show-ref                 # Ver las referencias dentro del repositorio
+git cat-file -p <object_id>  # Inspeccionar objetos dentro de Git
+```
+**Solución:** Al inspeccionar las referencias con git show-ref, encontramos un objeto sospechoso. Utilizando git cat-file -p <object_id>, logramos obtener la contraseña para el nivel 31: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy.
+
 
