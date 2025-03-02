@@ -216,3 +216,18 @@ nc (netcat)         # Para probar la conexión antes de usar openssl (opcional).
 **Solución:** Conectarse al servidor en el puerto 30001 usando openssl: openssl s_client -connect localhost:30001 -quiet
 Una vez dentro, enviar la contraseña del nivel 15. Recibiremos la contraseña para el nivel 16: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx.
 
+### Nivel 16
+
+**Descripción:** En este nivel, se nos proporciona la contraseña encriptada y necesitamos descifrarla utilizando una conexión segura. Se nos informa que hay varios puertos abiertos en localhost y debemos encontrar el que nos permita obtener la clave privada SSH para conectarnos al siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+nmap -p 31000-32000 localhost                               # Escanear puertos abiertos en el rango 31000-32000
+openssl s_client -connect localhost:PUERTO -quiet           # Conectar con OpenSSL a los puertos abiertos manualmente
+nano rsafile                                                # Guardar la clave privada en un archivo
+chmod 600 rsafile                                           # Asignar permisos seguros al archivo
+ssh -i rsafile bandit17@bandit.labs.overthewire.org -p 2220 # Conectarse al siguiente nivel con la clave privada
+whoami                                                      # Verificar el usuario actual
+```
+**Solución:** Usar ssh -i rsafile bandit17@... para acceder al nivel 17. Ahora tenemos acceso al siguiente nivel.
+
