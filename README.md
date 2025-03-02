@@ -295,4 +295,19 @@ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv # Leer el archivo temporal donde se gu
 ```
 **Solución:** Leer el archivo /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv y obtener la contraseña para el nivel 22: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q.
 
+### Nivel 22
+
+**Descripción:** En este nivel, encontramos un archivo cron en /etc/cron.d/cronjob_bandit23 que ejecuta un script (/usr/bin/cronjob_bandit23.sh) cada minuto como bandit23. Este script genera un hash MD5 de la cadena "I am user bandit23" y lo usa como nombre de archivo en /tmp/ para guardar la contraseña de bandit23.
+
+**Comandos utilizados:**
+```bash
+cd /etc/cron.d                                      # Listar archivos en /etc/cron.d/
+ls                                                  # Listar los archivos en el directorio
+cat cronjob_bandit23                                # Ver el contenido del cronjob de bandit23
+cat /usr/bin/cronjob_bandit23.sh                    # Leer el contenido del script
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1  # Generar el hash MD5 manualmente
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349           # Leer el archivo con la contraseña
+```
+**Solución:** Al leer el archivo con la contraseña: cat /tmp/8ca319486bfbbc3663ea0fbe81326349. Obtenemos la contraseña para el nivel 23: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga.
+
 
