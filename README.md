@@ -93,3 +93,16 @@ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null   # Buscar el archivo 
 cat /var/lib/dpkg/info/bandit7.password                     # Leer el contenido del archivo encontrado
 ```
 **Solución:** La contraseña para el nivel 7 es: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj.
+
+### Nivel 7
+
+**Descripción:** En este nivel, debemos encontrar una línea específica dentro del archivo data.txt. La línea contiene la palabra "millionth" seguida de la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls                          # Listar los archivos en el directorio
+wc -l data.txt              # Contar las líneas del archivo 'data.txt'
+cat data.txt                # Mostrar todo el contenido del archivo (no recomendado para archivos grandes)
+grep "millionth" data.txt   # Filtrar y encontrar la línea que contiene "millionth"
+```
+**Solución:** La contraseña para el nivel 8 es: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc.
