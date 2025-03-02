@@ -146,3 +146,15 @@ cat data.txt                # Ver el contenido del archivo
 cat data.txt | base64 -d    # Decodificar el contenido en Base64
 ```
 **Solución:** Después de decodificar el texto en Base64, se obtuvo la siguiente contraseña para el nivel 11: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr.
+
+### Nivel 11
+
+**Descripción:** El archivo data.txt contiene un texto cifrado en ROT13, un cifrado de sustitución que reemplaza cada letra por la que está 13 posiciones adelante en el alfabeto. La tarea es descifrarlo para obtener la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls -l                                       # Ver permisos y dueño del archivo
+cat data.txt                                # Ver el contenido del archivo
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'    # Descifrar ROT13
+```
+**Solución:** Después de aplicar ROT13, se obtuvo la siguiente contraseña para el nivel 12: 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4.
