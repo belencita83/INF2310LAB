@@ -82,3 +82,14 @@ find . -readable -size 1033c -not -executable   # Buscar el archivo con las cara
 cat ./maybehere07/.file2                        # Leer el archivo encontrado
 ```
 **Solución:** La contraseña para el nivel 6 es: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG.
+
+### Nivel 6
+
+**Descripción:** En este nivel, debes encontrar un archivo en el sistema que: Es propiedad del usuario bandit7. Pertenece al grupo bandit6. Tiene un tamaño exacto de 33 bytes.
+
+**Comandos utilizados:**
+```bash
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null   # Buscar el archivo evitando errores de permisos
+cat /var/lib/dpkg/info/bandit7.password                     # Leer el contenido del archivo encontrado
+```
+**Solución:** La contraseña para el nivel 7 es: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj.
