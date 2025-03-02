@@ -370,3 +370,19 @@ git checkout <commit_id>^  # Restaurar una versión anterior del repositorio
 ```
 **Solución:** Al inspeccionar los commits previos con git log y git show, encontramos que la contraseña fue eliminada en un commit anterior. Restauramos esa versión y obtenemos la contraseña para el nivel 28: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN.
 
+### Nivel 28
+
+**Descripción:** Este nivel también involucra el repositorio Git en ~/repo. Debemos buscar la contraseña explorando las diferentes ramas del repositorio.
+
+**Comandos utilizados:**
+```bash
+ls -la                      # Listar archivos ocultos
+cd repo                     # Acceder al directorio del repositorio
+git branch -a               # Listar todas las ramas disponibles
+git checkout <branch_name>  # Cambiar a una rama específica
+git log                     # Ver el historial de commits en la rama actual
+git show <commit_id>        # Ver los cambios en un commit específico
+```
+**Solución:** Descubrimos que hay una rama oculta con git branch -a. Al cambiar a esta rama y revisar su historial de commits, encontramos la contraseña en uno de los commits para el  nivel 29: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7.
+
+
