@@ -134,3 +134,15 @@ strings data.txt            # Extraer cadenas de texto legibles desde el archivo
 grep =                      # Filtrar las líneas que contienen el carácter '='
 ```
 **Solución:** Dentro del contenido extraído, se observó que la contraseña estaba en la línea con el formato "password is ...". La contraseña para el nivel 10 es: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey.
+
+### Nivel 10
+
+**Descripción:** En este nivel, el archivo data.txt contiene un texto codificado en Base64. La tarea es decodificarlo para obtener la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls                          # Listar los archivos en el directorio
+cat data.txt                # Ver el contenido del archivo
+cat data.txt | base64 -d    # Decodificar el contenido en Base64
+```
+**Solución:** Después de decodificar el texto en Base64, se obtuvo la siguiente contraseña para el nivel 11: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr.
