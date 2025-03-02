@@ -412,4 +412,27 @@ git cat-file -p <object_id>  # Inspeccionar objetos dentro de Git
 ```
 **Solución:** Al inspeccionar las referencias con git show-ref, encontramos un objeto sospechoso. Utilizando git cat-file -p <object_id>, logramos obtener la contraseña para el nivel 31: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy.
 
+### Nivel 31
+
+**Descripción:** En este nivel, se nos proporciona acceso a un repositorio Git. El objetivo es subir un archivo con un contenido específico al repositorio remoto.
+
+**Comandos utilizados:**
+```bash
+# Crear un directorio temporal y navegar a él
+mkdir -p /tmp/repo_bandit31
+cd /tmp/repo_bandit31
+# Clonar el repositorio Git proporcionado
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo
+cd repo
+# Ver el contenido del repositorio
+ls -la
+cat README.md
+echo "May I come in?" > key.txt     # Crear el archivo solicitado
+git add -f key.txt                  # Forzar la adición del archivo ignorado
+git commit -m "Added key.txt as requested"  # Realizar el commit
+git push origin master                      # Enviar los cambios al repositorio remoto
+```
+**Solución:** La contraseña para el nivel 32 es: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K.
+
+
 
