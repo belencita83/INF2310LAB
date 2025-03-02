@@ -70,3 +70,15 @@ file ./-file01   # Verificar el tipo de archivo
 cat ./-file07    # Leer el archivo que contiene la contraseña
 ```
 **Solución:** La contraseña para el nivel 5 es: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw.
+
+### Nivel 5
+
+**Descripción:** En este nivel, hay múltiples directorios llamados maybehereXX dentro del directorio inhere. Debes encontrar un archivo oculto que: Sea legible. Tenga un tamaño exacto de 1033 bytes. No sea ejecutable.
+
+**Comandos utilizados:**
+```bash
+ls                                              # Listar los archivos y directorios en 'inhere'
+find . -readable -size 1033c -not -executable   # Buscar el archivo con las características indicadas
+cat ./maybehere07/.file2                        # Leer el archivo encontrado
+```
+**Solución:** La contraseña para el nivel 6 es: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG.
