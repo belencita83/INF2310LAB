@@ -177,3 +177,16 @@ mv data_decoded data           # Renombrar archivo decodificado
 cat data.txt                   # Mostrar el contenido final (debería contener la contraseña)
 ```
 **Solución:** Después de repetir los pasos de extracción y decodificación, finalmente obtenemos la contraseña para el nivel 13: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn.
+
+### Nivel 13
+
+**Descripción:** En este nivel, la contraseña de bandit14 no está almacenada en un archivo de texto como en niveles anteriores, sino que se proporciona una clave SSH privada (sshkey.private) en el directorio de bandit13. Esta clave nos permite acceder al siguiente usuario sin necesidad de una contraseña.
+
+**Comandos utilizados:**
+```bash
+ls                                               # Listar archivos en el directorio de bandit13
+ssh -i sshkey.private bandit14@localhost -p 2220 # Conectarse a bandit14 usando la clave privada SSH
+```
+**Solución:** Usamos ls para ver qué archivos hay en el directorio. Vemos que existe sshkey.private, que es una clave privada SSH.
+              Nos conectamos a bandit14 usando esta clave con el comando: ssh -i sshkey.private bandit14@localhost -p 2220
+              Esto nos permite acceder sin necesidad de ingresar una contraseña.
