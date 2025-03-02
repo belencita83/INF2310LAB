@@ -356,8 +356,17 @@ echo "$(more /etc/bandit_pass/bandit26)"    # Usar el comando "more" dentro del 
 ```
 **Solución:** Ejecutamos ./bandit27-do con el comando cat para leer la contraseña, para el nivel 27 es: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB.
 
+### Nivel 27
 
+**Descripción:** En este nivel, encontramos un directorio ~/bandit27-git que contiene un repositorio de Git. Nuestra tarea es encontrar la contraseña del siguiente nivel explorando el historial del repositorio.
 
-
-
+**Comandos utilizados:**
+```bash
+ls -la                     # Listar archivos ocultos para encontrar el repositorio Git
+cd bandit27-git            # Acceder al directorio del repositorio
+git log                    # Ver el historial de commits
+git show <commit_id>       # Ver los cambios en un commit específico
+git checkout <commit_id>^  # Restaurar una versión anterior del repositorio
+```
+**Solución:** Al inspeccionar los commits previos con git log y git show, encontramos que la contraseña fue eliminada en un commit anterior. Restauramos esa versión y obtenemos la contraseña para el nivel 28: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN.
 
