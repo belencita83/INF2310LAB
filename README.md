@@ -106,3 +106,18 @@ cat data.txt                # Mostrar todo el contenido del archivo (no recomend
 grep "millionth" data.txt   # Filtrar y encontrar la línea que contiene "millionth"
 ```
 **Solución:** La contraseña para el nivel 8 es: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc.
+
+### Nivel 8
+
+**Descripción:** En este nivel, el archivo data.txt contiene 1001 líneas de texto, de las cuales una sola línea aparece una vez. La tarea es encontrar esa línea única, que contiene la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls                          # Listar los archivos en el directorio
+wc -l data.txt              # Contar las líneas del archivo 'data.txt'
+cat data.txt                # Mostrar todo el contenido del archivo (no recomendado)
+sort data.txt               # Ordenar las líneas del archivo
+uniq -c                     # Contar cuántas veces aparece cada línea
+grep -v 10                  # Filtrar las líneas que no aparecen 10 veces (muestra la única repetida 1 vez)
+```
+**Solución:** La contraseña para el nivel 9 es: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM.
