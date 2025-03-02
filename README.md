@@ -385,4 +385,17 @@ git show <commit_id>        # Ver los cambios en un commit específico
 ```
 **Solución:** Descubrimos que hay una rama oculta con git branch -a. Al cambiar a esta rama y revisar su historial de commits, encontramos la contraseña en uno de los commits para el  nivel 29: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7.
 
+### Nivel 29
+
+**Descripción:** En este nivel, el repositorio Git en ~/repo tiene etiquetas (tags). Nuestra tarea es encontrar la contraseña buscando entre estas etiquetas.
+
+**Comandos utilizados:**
+```bash
+ls -la                  # Listar archivos ocultos
+cd repo                 # Acceder al directorio del repositorio
+git tag                 # Listar todas las etiquetas disponibles
+git show <tag_name>     # Ver el contenido de una etiqueta
+```
+**Solución:** Ejecutamos git tag y encontramos una etiqueta sospechosa. Al inspeccionarla con git show <tag_name>, obtenemos la contraseña para el nivel 30: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL.
+
 
