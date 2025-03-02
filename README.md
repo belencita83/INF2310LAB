@@ -255,4 +255,16 @@ ls -la                                                      # Comprobamos los pe
 ```
 **Solución:** Dado que la sesión se cierra inmediatamente, ejecutamos el comando cat readme directamente en la conexión SSH. Esto nos devuelve la contraseña para el nivel 19: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8.
 
+### Nivel 19
+
+**Descripción:** Al conectarnos como bandit19, encontramos un archivo llamado bandit20-do, que tiene el permiso SUID activado (-rwsr-x---). Esto significa que cuando ejecutamos este archivo, se ejecuta con los privilegios del usuario bandit20 en lugar de los de bandit19. El archivo bandit20-do permite ejecutar comandos como bandit20, lo que nos da la oportunidad de leer la contraseña del siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+./bandit20-do                               # Ejecutamos el archivo bandit20-do sin argumentos para ver su uso.
+./bandit20-do id                            # Verificamos el usuario con el que se ejecuta.
+./bandit20-do cat /etc/bandit_pass/bandit20 # Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20.
+```
+**Solución:** Leemos la contraseña del usuario bandit20 en /etc/bandit_pass/bandit20, que devuelve la contraseña para el nivel 20: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO.
+
 
