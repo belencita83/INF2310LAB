@@ -158,3 +158,22 @@ cat data.txt                                # Ver el contenido del archivo
 cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'    # Descifrar ROT13
 ```
 **Solución:** Después de aplicar ROT13, se obtuvo la siguiente contraseña para el nivel 12: 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4.
+
+### Nivel 12
+
+**Descripción:** En este nivel, encontramos un archivo llamado data.txt que ha sido comprimido y codificado varias veces. La tarea consiste en revertir estos procesos para revelar la contraseña del siguiente nivel.
+
+**Comandos utilizados:**
+```bash
+file data.txt                  # Identificar el tipo de archivo
+mv data.txt data.gz            # Cambiar nombre para reconocer extensión
+gunzip data.gz                 # Extraer archivo
+mv data data.bz2               # Cambiar nombre para reconocer extensión
+bzip2 -d data.bz2              # Extraer archivo
+mv data data.tar               # Cambiar nombre para reconocer extensión
+tar -xf data.tar               # Extraer archivos del tar
+base64 -d data > data_decoded  # Decodificar contenido
+mv data_decoded data           # Renombrar archivo decodificado
+cat data.txt                   # Mostrar el contenido final (debería contener la contraseña)
+```
+**Solución:** Después de repetir los pasos de extracción y decodificación, finalmente obtenemos la contraseña para el nivel 13: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn.
