@@ -56,3 +56,17 @@ ls -la                    # Listar los archivos detallados en 'inhere'
 cat ...Hiding-From-You    # Leer el archivo con el nombre oculto
 ```
 **Solución:** La contraseña para el nivel 4 es: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ.
+
+### Nivel 4
+
+**Descripción:** En este nivel, hay varios archivos llamados -fileXX en el directorio inhere. Debes encontrar el archivo que contiene la contraseña.
+
+**Comandos utilizados:**
+```bash
+ls               # Listar los archivos en el directorio
+file ./-file00   # Verificar el tipo de archivo
+file ./-file01   # Verificar el tipo de archivo
+...
+cat ./-file07    # Leer el archivo que contiene la contraseña
+```
+**Solución:** La contraseña para el nivel 5 es: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw.
