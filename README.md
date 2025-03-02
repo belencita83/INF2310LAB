@@ -190,3 +190,16 @@ ssh -i sshkey.private bandit14@localhost -p 2220 # Conectarse a bandit14 usando 
 **Solución:** Usamos ls para ver qué archivos hay en el directorio. Vemos que existe sshkey.private, que es una clave privada SSH.
               Nos conectamos a bandit14 usando esta clave con el comando: ssh -i sshkey.private bandit14@localhost -p 2220
               Esto nos permite acceder sin necesidad de ingresar una contraseña.
+
+### Nivel 14
+
+**Descripción:** En este nivel, la contraseña de bandit15 se encuentra en un archivo de texto ubicado en /etc/bandit_pass/bandit14, pero para continuar necesitamos enviarla a un servicio escuchando en el puerto 30000 usando netcat (nc).
+
+**Comandos utilizados:**
+```bash
+cat /etc/bandit_pass/bandit14   # Leer la contraseña de bandit14
+nc localhost 30000              # Conectar al puerto 30000 y enviar la contraseña
+```
+**Solución:** Obtenemos la contraseña de bandit14 usando: cat /etc/bandit_pass/bandit14. La contraseña obtenida es: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS. Nos conectamos al servicio en el puerto 30000 con nc: nc localhost 30000. Luego, ingresamos la contraseña anterior y presionamos Enter.
+              Obtenemos la contraseña para el nivel 15: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo.
+
