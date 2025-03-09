@@ -1,2 +1,0 @@
-# INF2310LAB
-## Natas
